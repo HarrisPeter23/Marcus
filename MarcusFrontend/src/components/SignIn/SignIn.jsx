@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import './SignIn.css';
 
-const SignIn = ({ onSwitchToSignUp }) => {
+const SignIn = ({ onSwitchToSignUp, onSuccess }) => {
   const navigate = useNavigate();
   const {
     register,
@@ -14,8 +14,10 @@ const SignIn = ({ onSwitchToSignUp }) => {
   const onSubmit = (data) => {
     // Your authentication logic can replace this alert
     alert(`Email: ${data.email}\nPassword: ${data.password}\nThis button should connect to backend authentication`);
-    // On successful login, navigate to chat interface
-    navigate('/chat');
+    // On successful login, call onSuccess to redirect to Marcus page
+    if (onSuccess) {
+      onSuccess();
+    }
   };
 
   const handleOAuthClick = (provider) => {
@@ -65,15 +67,17 @@ const SignIn = ({ onSwitchToSignUp }) => {
         <input
           type="password"
           placeholder="Enter your password"
-          {...register('password', { required: 'Password is required' ,
+          {...register('password', {
+            required: 'Password is required',
             minLength: {
               value: 8,
-              message: 'Password must be at least 8 characters'
+              message: 'Password must be at least 8 characters',
             },
             pattern: {
               value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/,
-              message: 'Password must contain uppercase, lowercase, and number'
-            } })}
+              message: 'Password must contain uppercase, lowercase, and number',
+            },
+          })}
         />
         {errors.password && <p style={{ color: 'red' }}>{errors.password.message}</p>}
 

@@ -1,0 +1,29 @@
+.marcus-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 45px 0 45px;
+}
+.marcus-logo {
+  font-family: 'AquireBold', Arial, sans-serif;
+  font-size: 2.2rem;
+  color: #8e86b1;
+  letter-spacing: 2px;
+}
+.marcus-header-right {
+  display: flex;
+  gap: 14px;
+}
+.marcus-profile, .marcus-settings {
+  background: #160022;
+  color: #8e86b1;
+  border: 1.5px solid #4f3c86;
+  border-radius: 9px;
+  padding: 11px 22px;
+  font-size: 1.07rem;
+  cursor: pointer;
+  transition: background 0.21s;
+}
+.marcus-profile:hover, .marcus-settings:hover {
+  background: #24005a;
+}

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 import '../SignIn/SignIn.css';
 
 const EyeIcon = ({ open }) => (
@@ -18,8 +17,7 @@ const EyeIcon = ({ open }) => (
   )
 );
 
-const EmailSignUp = () => {
-  const navigate = useNavigate();
+const EmailSignUp = ({ onSuccess }) => {
   const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
   const [step, setStep] = useState(1); // 1 = email, 2 = OTP, 3 = complete signup
   const [email, setEmail] = useState('');
@@ -49,8 +47,10 @@ const EmailSignUp = () => {
       password: data.password
     });
     
-    // Redirect to chat interface after successful signup
-    navigate('/chat');
+    // Call onSuccess callback to redirect to Marcus page
+    if (onSuccess) {
+      onSuccess();
+    }
   };
 
   const handleBackToEmail = () => {
