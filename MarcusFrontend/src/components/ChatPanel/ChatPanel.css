@@ -1,0 +1,37 @@
+.dashboard-row {
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  align-items: flex-start;    /* top-align panels */
+}
+
+.chat-panel, .metrics-panel {
+  background: #fff;
+  border-radius: 20px;
+  width: 560px;               /* or your preferred fixed width */
+  height: 580px;              /* set identical height for both panels */
+  padding: 36px 32px 24px 32px;
+  box-shadow: 0 8px 32px rgba(64, 44, 153, 0.08);
+  margin-bottom: 36px;        /* space from the bottom edge */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.chat-msg-bubble {
+  background: #edeaf6;
+  color: #17043d;
+  border-radius: 14px;
+  padding: 18px 14px 14px 18px;
+  margin-bottom: 27px;
+  position: relative;
+  font-size: 1rem;
+}
+
+.chat-time {
+  display: block;
+  color: #a09bc6;
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+

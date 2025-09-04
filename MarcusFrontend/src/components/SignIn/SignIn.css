@@ -1,0 +1,174 @@
+.auth-content {
+  width: 100%;
+  /* Align everything left for better error message placement */
+  text-align: left;
+}
+
+.auth-content h2 {
+  /* Keep header centered */
+  text-align: center;
+}
+
+.auth-content p {
+  margin-top: 4px;
+  margin-bottom: 8px;
+  color: red;
+  font-size: 0.9rem;
+  /* Align error text left under inputs */
+  text-align: left;
+  padding-left: 12px; /* Align padding with input padding */
+}
+
+.heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.company-heart {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 16px auto;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #cdc7ff;
+}
+
+label {
+  text-align: left;
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: #a59ddb;
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: none;
+  background: #160022; /* very dark purple-black */
+  color: #d0cbff;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: 2px solid #6648b5;
+  background: #24005a;
+}
+
+.forgot {
+  display: block;
+  text-align: right;
+  font-size: 0.85rem;
+  color: #a9a0db;
+  margin-right: 2px;
+  margin-bottom: 16px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.white-btn {
+  width: 100%;
+  padding: 14px 0;
+  margin-bottom: 12px;
+  margin-top: 24px;
+  border: none;
+  border-radius: 24px;
+  font-size: 1.1rem;
+  background: #331f74;
+  color: #dedbff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.white-btn:hover {
+  background: #5c45bd;
+}
+
+.or {
+  margin: 18px 0 16px 0;
+  color: #a79ee0;
+  font-size: 1rem;
+}
+
+.oauth-btn {
+  width: 100%;
+  padding: 14px 0;
+  margin-bottom: 12px;
+  border: 1px solid #4f3c86;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  background: #160022;
+  color: #c4bdff;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.google-icon svg,
+.apple-icon svg,
+.github-icon svg {
+  vertical-align: middle;
+  margin-right: 6px;
+  fill: currentColor;
+}
+
+.oauth-btn.google:hover,
+.oauth-btn.apple:hover,
+.oauth-btn.github:hover {
+  background: #24005a;
+  color: #dedbff;
+}
+
+.footer {
+  margin-top: 24px;
+  font-size: 1rem;
+  color: #a9bbe1;
+}
+
+.footer a {
+  color: #cdc7ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.or-divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: #4f3c86;
+}
+
+.or-text {
+  margin: 0 16px;
+  color: #a79ee0;
+  font-size: 1rem;
+  font-weight: 500;
+}

@@ -1,0 +1,41 @@
+.roadmap-bar {
+  width: max-content;      /* Only as wide as needed for all steps/lines */
+  display: flex;
+  align-items: center;
+  padding-bottom: 16px;
+  margin-bottom: 14px;
+  padding-left: 0;
+  margin-left: auto;       /* Center horizontally */
+  margin-right: auto;      /* Center horizontally */
+}
+
+
+.roadmap-step {
+  display: flex;
+  align-items: center;
+  color: #7e68bc;
+  font-size: 1rem;
+  font-weight: 600;
+  background: none;
+  border-radius: 16px;
+  padding: 4px 16px;
+  height: 32px;
+}
+
+.step-active {
+  background: #f7f4fd;
+  color: #38218d;
+  border: 1.5px solid #e3dafa;
+}
+
+.roadmap-step span {
+  margin-left: 5px;
+}
+
+.roadmap-line {
+  width: 55px;
+  height: 4px;
+  background: #e3dafa;
+  border-radius: 4px;
+  margin: 0 4px;
+}

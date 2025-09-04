@@ -1,0 +1,77 @@
+.input-area {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  margin-left: -12px;  /* Shift slightly left, adjust value as needed */
+}
+
+.attach-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 4px;          /* Minimal padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  border-radius: 9px;
+  transition: background 0.2s;
+  height: 28px;              /* Thinner height */
+  width: 28px;               /* Thinner width */
+  margin-bottom: 5px;
+}
+
+.attach-btn svg {
+  height: 18px;              /* Small and thin */
+  width: 18px;
+}
+
+
+.attach-btn:hover,
+.attach-btn:focus {
+  background: #edeaf6;
+  outline: none;
+}
+
+
+
+.input-area input {
+  flex: 1;
+  padding: 14px 20px;
+  border: 2px solid #edeaf6;
+  border-radius: 12px;
+  background: #f5f3fc;
+  color: #31235e;
+  font-size: 1.13rem;
+  outline: none;
+  transition: background 0.2s;
+  box-shadow: none;
+  border-right: none;
+}
+
+.send-btn {
+  width: 56px;
+  height: 52px;
+  margin-left: 8px;
+  margin-bottom: 5px;
+  background: #f5f3fc;
+  border: 2px solid #edeaf6;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-left: 2px solid #edeaf6;
+}
+
+.send-btn:hover,
+.send-btn:focus {
+  background: #edeaf6;
+  outline: none;
+}
+
+.send-btn svg {
+  height: 24px;
+  width: 24px;
+}

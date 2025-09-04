@@ -1,0 +1,151 @@
+body {
+  background: #000000; /* Pure black background */
+  color: #c2bbff; /* very subtle purple text */
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.15rem; /* Increased from implicit 1rem */
+}
+.auth-container {
+  width: 400px; /* Increased from 350px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 95vh; /* Increased from 90vh */
+}
+.auth-content {
+  width: 100%;
+  text-align: center;
+}
+.heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px; /* Increased from 16px */
+}
+.company-heart {
+  width: 64px; /* Increased from 56px */
+  height: 64px; /* Increased from 56px */
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 18px auto; /* Increased from 16px */
+}
+h2 {
+  margin-top: 0;
+  margin-bottom: 28px; /* Increased from 24px */
+  font-size: 1.9rem; /* Increased from 1.7rem */
+  font-weight: 600;
+  color: #cdc7ff;
+}
+label {
+  text-align: left;
+  display: block;
+  margin-bottom: 10px; /* Increased from 8px */
+  margin-top: 14px; /* Increased from 12px */
+  font-size: 1.1rem; /* Increased from 0.95rem */
+  color: #a59ddb;
+}
+input {
+  width: 100%;
+  padding: 14px 16px; /* Increased from 12px 14px */
+  margin-bottom: 10px; /* Increased from 8px */
+  border-radius: 10px; /* Increased from 8px */
+  border: none;
+  background: #160022; /* very dark purple-black */
+  color: #d0cbff;
+  font-size: 1.15rem; /* Increased from 1rem */
+}
+input:focus {
+  outline: 2px solid #6648b5;
+  background: #24005a;
+}
+.forgot {
+  display: block;
+  text-align: right;
+  font-size: 1rem; /* Increased from 0.85rem */
+  color: #a9a0db;
+  margin-right: 2px;
+  margin-bottom: 18px; /* Increased from 16px */
+  text-decoration: underline;
+  cursor: pointer;
+}
+.white-btn {
+  width: 100%;
+  padding: 14px 0; /* Increased from 12px */
+  margin-bottom: 14px; /* Increased from 12px */
+  border: 1px solid #4f3c86;
+  border-radius: 28px; /* Increased from 24px */
+  font-size: 1.15rem; /* Increased from 1rem */
+  background: #000000; /* Pure black button background */
+  color: #dedbff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 8px #6e57fc88; /* subtle glow for button */
+}
+.white-btn:hover {
+  background: #24005a;
+  box-shadow: 0 0 16px #6e57fccc;
+}
+.or {
+  margin: 20px 0 18px 0; /* Increased from 18px 0 16px */
+  color: #a79ee0;
+  font-size: 1.15rem; /* Increased from 1rem */
+}
+.oauth-btn {
+  width: 100%;
+  padding: 14px 0; /* Increased from 12px */
+  margin-bottom: 14px; /* Increased from 12px */
+  border: 1px solid #4f3c86;
+  border-radius: 14px; /* Increased from 12px */
+  font-size: 1.15rem; /* Increased from 1rem */
+  background: #000000; /* Pure black OAuth button background */
+  color: #c4bdff;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, box-shadow 0.3s ease, color 0.2s;
+  box-shadow: 0 0 8px #6e57fc66; /* subtle glow */
+}
+.oauth-btn.google:hover,
+.oauth-btn.apple:hover,
+.oauth-btn.github:hover {
+  background: #24005a;
+  color: #dedbff;
+  box-shadow: 0 0 16px #6e57fccc;
+}
+.icon {
+  display: flex;
+  align-items: center;
+  margin-right: 10px; /* Increased from 8px */
+}
+.google-icon svg,
+.apple-icon svg,
+.github-icon svg {
+  width: 26px; /* Increased from 22px */
+  height: 26px; /* Increased from 22px */
+  vertical-align: middle;
+  margin-right: 8px; /* Increased from 6px */
+  fill: currentColor;
+}
+.footer {
+  margin-top: 28px; /* Increased from 24px */
+  font-size: 1.1rem; /* Increased from 0.94rem */
+  color: #a9bbe1;
+}
+.footer a {
+  color: #cdc7ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.desc {
+  color: #8e8cd1;
+  font-size: 1.15rem; /* Increased from 1rem */
+  margin-bottom: 20px; /* Increased from 18px */
+}

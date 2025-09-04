@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'Aquire';
+  src: url('/fonts/Aquire-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 80px;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  left: 10px;    /* Add px units */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.back-button svg {
+  stroke: #31235e;
+  width: 24px;
+  height: 24px;
+}
+
+.header-title {
+  font-family: 'Aquire', sans-serif;
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: #17043d;
+  margin-bottom: 2px;
+  letter-spacing: 2px;
+  margin-left: 40px; /* Create space for back button */
+}
+
+.header-desc {
+  font-size: 1rem;
+  color: #9e8fc8;
+  margin-left: 40px; /* Align with title */
+}
