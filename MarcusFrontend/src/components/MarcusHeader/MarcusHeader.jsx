@@ -1,16 +1,15 @@
+// MarcusHeader.jsx
 import React from "react";
 import "./MarcusHeader.css";
 
-const MarcusHeader = () => {
+export default function MarcusHeader() {
   return (
     <header className="marcus-header">
-      <span className="marcus-logo">MARCUS</span>
-      <div className="marcus-header-right">
-        <button className="marcus-profile">Profile</button>
-        <button className="marcus-settings"><span>⚙️</span></button>
+      <div className="logo">
+        <div className="logo-icon">🧠</div>
+        Marcus
       </div>
+      <div className="user-initial">M</div>
     </header>
   );
-};
-
-export default MarcusHeader;
+}
