@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Sidebar.css";
+import "./SideBar.css";
 
 export default function Sidebar() {
   const [expanded, setExpanded] = useState(false);
@@ -12,7 +12,6 @@ export default function Sidebar() {
     >
       <div className="sidebar-top">
         <div className="sidebar-logo">
-          <i className="icon icon-logo"></i>
           {expanded && <span className="logo-text">Marcus</span>}
         </div>
         <button className="sidebar-btn active">
@@ -40,11 +39,11 @@ export default function Sidebar() {
       )}
       <div className="sidebar-bottom">
         <div className="sidebar-user">
-          <div className="sidebar-user-avatar">V</div>
+          <div className="sidebar-user-avatar">U</div>
           {expanded && (
             <div className="sidebar-user-details">
               <span>User</span>
-              <span className="sidebar-user-plan">Free plan</span>
+              <span className="sidebar-user-plan">plan</span>
             </div>
           )}
         </div>

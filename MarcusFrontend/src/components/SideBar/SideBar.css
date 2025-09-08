@@ -4,20 +4,21 @@
   top: 0;
   bottom: 0;
   width: 64px;
-  background: #232220;
-  color: #ececec;
+  background: #0e081f; /* deep black-blue-purple */
+  color: #B589D6; /* soft purple-gray text */
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 100;
-  transition: width 0.25s cubic-bezier(0.4,0,0.2,1);
-  border-right: 1px solid #2b2a27;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+  border-right: 1px solid #3a2752; /* dark purple border */
+  overflow: hidden;
 }
 
 .sidebar.expanded {
   width: 320px;
   align-items: flex-start;
-  box-shadow: 6px 0 20px #0003;
+  box-shadow: 8px 0 30px rgba(99, 36, 255, 0.25); /* softer subtle shadow */
 }
 
 .sidebar-top {
@@ -27,8 +28,9 @@
   gap: 16px;
   padding: 24px 0 0 0;
   align-items: center;
-  transition: align-items 0.25s;
+  transition: align-items 0.4s ease, padding-left 0.4s ease;
 }
+
 .sidebar.expanded .sidebar-top {
   align-items: flex-start;
   padding-left: 28px;
@@ -38,40 +40,56 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 700;
+  font-size: 22px;
   margin-bottom: 20px;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
+  color: #c6b9ff;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInSlideIn 0.35s forwards 0.3s;
+}
+
+.sidebar.expanded .sidebar-logo {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .logo-text {
-  font-family: serif;
-  font-size: 1.3em;
-  color: #ececec;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5em;
+  color: #c6b9ff;
+  user-select: none;
 }
 
-/* Sidebar Buttons */
 .sidebar-btn {
   background: none;
   border: none;
   display: flex;
   align-items: center;
   gap: 14px;
-  color: #ececec;
+  color: #aa93bc;
   font-size: 17px;
-  padding: 0 0;
-  margin-bottom: 4px;
-  height: 46px;
-  width: 46px;
+  padding: 0;
+  margin-bottom: 6px;
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
-  transition: 
-    background 0.18s, 
-    box-shadow 0.18s, 
-    color 0.18s, 
-    width 0.25s cubic-bezier(0.4,0,0.2,1);
   cursor: pointer;
-  position: relative;
   justify-content: center;
+  position: relative;
+  user-select: none;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    color 0.3s ease,
+    width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 0.4s ease;
+  filter: none;
+  opacity: 0.9;
+  transform: translateX(0);
+  animation: fadeInScale 0.45s forwards;
+  animation-delay: 0.35s;
 }
 
 .sidebar.expanded .sidebar-btn {
@@ -81,80 +99,110 @@
   justify-content: flex-start;
 }
 
+.sidebar-btn:hover {
+  background: rgba(183, 120, 255, 0.12); /* lighter subtle hover */
+  color: #d8c1ff;
+  filter: none;
+  transform: scale(1.05);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
 .sidebar-btn.active,
 .sidebar-btn:active {
-  background: #a65739 !important;
-  color: #fff !important;
-}
-.sidebar-btn.active .icon-plus,
-.sidebar-btn:active .icon-plus {
-  color: #fff;
-}
-
-.sidebar-btn:hover {
-  background: #a6573955;
-}
-
-.sidebar-btn span {
-  opacity: 1;
-  transition: opacity 0.2s;
-}
-
-.sidebar:not(.expanded) .sidebar-btn span {
-  opacity: 0;
-  width: 0;
-  overflow: hidden;
-  display: none;
+  background: #c4b9ff;
+  color: black;
+  filter: none;
+  box-shadow: 0 0 12px 2px #b19effaa;
 }
 
 .icon {
   font-style: normal;
-  font-size: 21px;
-  width: 26px;
-  height: 26px;
+  font-size: 22px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
+  color: inherit;
+  transition: color 0.3s ease;
 }
 
-/* Modern line icons - ideally swap with SVG or icon font in production */
-.icon-logo::before { content: "\25AD"; font-size: 22px; }
-.icon-plus::before { content: "+"; font-size: 24px; }
-.icon-chat::before { content: "\1F5E8"; }
-.icon-folder::before { content: "\1F5C3"; }
-.icon-artifacts::before { content: "\2734"; } /* Just visual placeholder */
+/* Icon unicode */
+.icon-logo::before {
+  content: "\25AD";
+  font-size: 24px;
+  color: #a18aff;
+}
+.icon-plus::before {
+  content: "+";
+  font-size: 26px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  line-height: 1;
+  transform: translate(3px, 3px);
+}
+.icon-chat::before {
+  content: "\1F5E8";
+  color: #b9aaff;
+}
+.icon-folder::before {
+  content: "\1F5C3";
+  color: #c4b9ff;
+}
 
 .sidebar-recents-label {
-  color: #adadad;
+  color: #9f95b8;
   font-size: 14px;
   font-weight: 600;
   margin: 22px 0 0 34px;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInSlideIn 0.35s forwards 0.45s;
+}
+
+.sidebar.expanded .sidebar-recents-label {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .sidebar-recents {
   margin: 6px 0 0 34px;
   width: 70%;
-  max-height: 162px;
+  max-height: 160px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 6px;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInSlideIn 0.35s forwards 0.55s;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.expanded .sidebar-recents {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .sidebar-recent {
-  color: #b1c0db;
+  color: #c1b4e0;
   font-size: 15px;
   padding: 7px 12px 7px 0;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.3s, color 0.3s ease;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .sidebar-recent:hover {
-  background: rgba(202,175,250, 0.18);
-  color: #dbeafe;
+  background: rgba(183, 140, 255, 0.15); /* lighter hover highlight */
+  color: #e9e0ff;
 }
 
 .sidebar-bottom {
@@ -163,6 +211,14 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 0.4s forwards 0.6s;
+}
+
+.sidebar.expanded .sidebar-bottom {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .sidebar-user {
@@ -177,16 +233,16 @@
 .sidebar-user-avatar {
   width: 36px;
   height: 36px;
-  background: #b7b7ae;
-  color: #232220;
+  background: #c4b9ff;
+  color: black;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 21px;
-  letter-spacing: 1px;
-  transition: background 0.12s;
+  font-size: 22px;
+  letter-spacing: 0.05em;
+  transition: background 0.2s ease;
 }
 
 .sidebar-user-details {
@@ -196,10 +252,27 @@
   gap: 1px;
   margin-left: 4px;
   font-size: 16px;
-  color: #ececec;
+  color: #c9c1ff;
 }
+
 .sidebar-user-plan {
   font-size: 13px;
-  color: #d4d4d4;
-  opacity: 0.7;
+  color: #b1a8ce;
+  opacity: 0.6;
+}
+
+/* Keyframe animations */
+@keyframes fadeInScale {
+  0% {opacity: 0; transform: scale(0.85);}
+  100% {opacity: 1; transform: scale(1);}
+}
+
+@keyframes fadeInSlideIn {
+  0% {opacity: 0; transform: translateX(-20px);}
+  100% {opacity: 1; transform: translateX(0);}
+}
+
+@keyframes fadeInSlideUp {
+  0% {opacity: 0; transform: translateY(20px);}
+  100% {opacity: 1; transform: translateY(0);}
 }
