@@ -114,10 +114,9 @@
 }
 
 .input-container:focus-within {
+  /* Remove all scale, box-shadow, glow effects */
   border-color: rgba(192, 132, 252, 0.8);
   background: rgba(147, 51, 234, 0.1);
-  box-shadow: 0 0 30px rgba(147, 51, 234, 0.3);
-  transform: scale(1.02);
 }
 
 .input-field {
@@ -128,6 +127,14 @@
   font-size: 16px;
   outline: none;
   font-family: inherit;
+  /* Remove the glow on focus */
+  box-shadow: none !important;
+}
+
+.input-field:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #c7c7c7; /* no effect on background, keeps clean */
 }
 
 .input-field::placeholder {
@@ -137,24 +144,37 @@
 .input-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
+/* Icon Button styles */
 .icon-button {
-  background: none;
+  background: #f3f1fb;
   border: none;
-  color: rgba(255, 255, 255, 0.6);
-  cursor: pointer;
+  border-radius: 50%;
   padding: 8px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 1px 4px rgba(170, 123, 255, 0.08);
+  cursor: pointer;
+  outline: none;
+  font-size: 17px;
 }
 
 .icon-button:hover {
-  color: rgba(192, 132, 252, 1);
-  background: rgba(147, 51, 234, 0.2);
-  transform: scale(1.1) rotate(5deg);
+  background: #ede9fe;
+  box-shadow: 0 2px 8px rgba(170, 123, 255, 0.15);
+  transform: scale(1.08);
+}
+
+.attach-btn svg {
+  stroke: #6366f1; /* blue-purple */
+}
+
+.send-btn svg {
+  stroke: #a21caf; /* vivid purple */
 }
 
 .model-info {
@@ -195,7 +215,7 @@
 
 .bottom-info {
   position: absolute;
-  bottom: 20px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 12px;

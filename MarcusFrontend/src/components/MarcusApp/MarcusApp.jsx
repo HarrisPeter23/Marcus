@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
-import MarcusHeader from "../MarcusHeader/MarcusHeader";
 import MarcusMain from "../MarcusMain/MarcusMain";
+import Sidebar from "../SideBar/SideBar";
 import "./MarcusApp.css";
 
 export default function MarcusApp() {
@@ -262,7 +262,7 @@ const maxSimultaneous = 1; // only one at a time
 
     return () => {
       window.removeEventListener("resize", resize);
-      window.removeEventListener("pointerdown", null);
+      // window.removeEventListener("pointerdown", null);
     };
   }, []);
 
@@ -270,9 +270,12 @@ const maxSimultaneous = 1; // only one at a time
     <div className="marcus-app-bg">
       <canvas ref={canvasRef} id="sky" />
       <div className="marcus-app-ui">
-        <MarcusHeader />
-        <MarcusMain />
+        <Sidebar />
+        <div className="main-content-wrapper">
+          <MarcusMain />
+        </div>
       </div>
     </div>
   );
 }
+
