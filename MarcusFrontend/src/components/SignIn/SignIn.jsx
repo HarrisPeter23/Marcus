@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import './SignIn.css';
+import axios from 'axios';
 
 const SignIn = ({ onSwitchToSignUp, onSuccess }) => {
   const navigate = useNavigate();
@@ -11,18 +12,37 @@ const SignIn = ({ onSwitchToSignUp, onSuccess }) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    // Your authentication logic can replace this alert
-    alert(`Email: ${data.email}\nPassword: ${data.password}\nThis button should connect to backend authentication`);
-    // On successful login, call onSuccess to redirect to Marcus page
-    if (onSuccess) {
-      onSuccess();
+ const onSubmit = async (data) => {
+    try {
+      const res = await axios.post(
+        "http://localhost:5000/api/auth/login", 
+        data,
+        { withCredentials: true } // important for cookies
+      );
+
+      if (res.data.success) {
+        alert("Login successful ✅");
+        if (onSuccess) {
+          onSuccess();
+        } else {
+          navigate("/dashboard"); // redirect after login
+        }
+      } else {
+        alert(res.data.message || "Login failed ❌");
+      }
+    } catch (error) {
+      alert("Error logging in: " + error.message);
     }
   };
 
   const handleOAuthClick = (provider) => {
-    alert(`${provider} auth placeholder`);
-  };
+  if (provider === "Google") {
+    window.location.href = "http://localhost:5000/api/auth/google";
+  } else if (provider === "GitHub") {
+    window.location.href = "http://localhost:5000/api/auth/github";
+  }
+};
+
 
   const GoogleIcon = () => (
     <svg width="22" height="22" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

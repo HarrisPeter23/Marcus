@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import '../SignIn/SignIn.css';
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 const EyeIcon = ({ open }) => (
   open ? (
@@ -23,16 +25,30 @@ const EmailSignUp = ({ onSuccess }) => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const password = watch('password', '');
+  const navigate = useNavigate();  
 
-  const onSubmit = (data) => {
-    // Handle signup logic here
-    // data = { username, password, confirmPassword, email }
-    if (onSuccess) {
-      onSuccess();
+  const onSubmit = async (data) => {
+  try {
+    const res = await axios.post(
+      "http://localhost:5000/api/auth/signup",
+      {
+        name: data.username,   
+        email: data.email,
+        password: data.password,
+      },
+      { withCredentials: true }
+    );
+
+    if (res.data.success) {
+      alert("Signup successful 🎉");
+      navigate("/dashboard");
+    } else {
+      alert(res.data.message || "Signup failed ❌");
     }
-    reset();
-    console.log('Creating account with', data);
-  };
+  } catch (error) {
+    alert("Error signing up: " + error.message);
+  }
+};
 
   return (
     <div className="auth-content">
